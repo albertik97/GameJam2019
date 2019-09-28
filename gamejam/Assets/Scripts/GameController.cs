@@ -11,7 +11,9 @@ public class GameController : MonoBehaviour
 
     public GameObject   player1,
                         player2,
-                        trap;
+                        trap,
+                        queso;
+
     public GameObject[] traps;
 
     public GameObject p1Instance,
