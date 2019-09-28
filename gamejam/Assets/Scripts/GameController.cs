@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class GameController : MonoBehaviour
@@ -15,10 +16,8 @@ public class GameController : MonoBehaviour
 
     public GameObject p1Instance,
                       p2Instance;
-
-
-
-
+    public int          pl1_score,
+                        pl2_score;
 
     void Awake()
     {
@@ -30,20 +29,32 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    void WinRound(int pl)
+    {
+        if(pl == 1)
+        {
+            Debug.Log("player 1 wins");
+        }
+        else
+        {
+            Debug.Log("player 2 wins");
+        }
     }
 
     void initMap()
     {
         createPlayers();
         createObjects();
-
+        createCheese();
     }
 
     void createPlayers()
@@ -51,6 +62,8 @@ public class GameController : MonoBehaviour
         p1Instance = Instantiate(player1);
         p2Instance = Instantiate(player2);
 
+        pl1_score = 0;
+        pl2_score = 0;
         p1Instance.transform.position = getRandomPosPlayer();
 
         do
@@ -62,6 +75,12 @@ public class GameController : MonoBehaviour
     Vector3 getRandomPosPlayer()
     {
         return new Vector3(Random.value < 0.5f ? -19 : 19, Random.value < 0.5f ? -21 : 17, 0);
+    }
+
+    void createCheese()
+    {
+        Instantiate(queso);
+        queso.transform.position = new Vector3(0, 0.5f, 0);
     }
 
     Vector3 getRandomPos()
