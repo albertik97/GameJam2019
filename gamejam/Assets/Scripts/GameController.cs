@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
@@ -12,8 +12,8 @@ public class GameController : MonoBehaviour
 
     public GameObject   player1,
                         player2,
-                        queso,
-                        trap;
+                        trap,
+                        cheese;
 
     public KeyCode[]    p1Controls,
                         p2Controls;
@@ -21,25 +21,21 @@ public class GameController : MonoBehaviour
     public GameObject[] traps;
 
     public GameObject p1Instance,
-                      p2Instance;
+                      p2Instance,
+                      cheeseInstance;
 
     public int  pl1_score,
                 pl2_score,
                 round;
-
-    bool to_reset;
-
-
-
-
 
     void Awake()
     {
         traps = new GameObject[numObjects];
         setControls();
         round = 0;
+        pl1_score = 0;
+        pl2_score = 0;
         initMap();
-        to_reset = false;
     }
 
     // Start is called before the first frame update
@@ -51,11 +47,24 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (to_reset)
-        {
-            initMap();
-            to_reset = false;
-        }
+
+    }
+
+    public void addPlayer1Score()
+    {
+        pl1_score += 1;
+        GameObject scr = GameObject.FindWithTag("score_p1");
+        TextMeshProUGUI asd = scr.GetComponent<TextMeshProUGUI>();
+        asd.text = pl1_score.ToString();
+        Debug.Log(pl1_score);
+    }
+
+    public void addPlayer2Score()
+    {
+        pl2_score += 1;
+        GameObject scr = GameObject.FindWithTag("score_p2");
+        TextMeshProUGUI asd = scr.GetComponent<TextMeshProUGUI>();
+        asd.text = pl2_score.ToString();
     }
 
     void setControls()
@@ -126,41 +135,41 @@ public class GameController : MonoBehaviour
         createCheese();
     }
 
-    void DestroyObjects()
-    {
-        for (int i = 0; i < traps.Length; i++)
-        {
-            Destroy(traps[i]);
-        }
-
-        Destroy(p1Instance);
-        Destroy(p2Instance);
-        Destroy(queso);
+    void DestroyObjects()
+    {
+        for (int i = 0; i < traps.Length; i++)
+        {
+            Destroy(traps[i]);
+        }
+
+        Destroy(p1Instance);
+        Destroy(p2Instance);
+        Destroy(cheeseInstance);
     }
 
-    public void NextRound()
-    {
-
-        Debug.Log("Reinicio juego " + round);
-
-        round++;
-
-        DestroyObjects();
-
-        if (round < 6) {
-            //Now re-create them
-            to_reset = true;
-        }
-        else
-        {
-            //Game Ends
-            ExitToMenu();
-        }
+    public void NextRound()
+    {
+
+        Debug.Log("Reinicio juego " + round);
+
+        round++;
+
+        DestroyObjects();
+
+        if (round < 6) {
+            //Now re-create them
+            initMap();
+        }
+        else
+        {
+            //Game Ends
+            ExitToMenu();
+        }
     }
 
-    void ExitToMenu()
-    {
-        round = 0;
+    void ExitToMenu()
+    {
+        round = 0;
     }
 
     void createPlayers()
@@ -168,8 +177,6 @@ public class GameController : MonoBehaviour
         p1Instance = Instantiate(player1);
         p2Instance = Instantiate(player2);
 
-        pl1_score = 0;
-        pl2_score = 0;
         p1Instance.transform.position = getRandomPosPlayer();
 
         do
@@ -185,8 +192,8 @@ public class GameController : MonoBehaviour
 
     void createCheese()
     {
-        Instantiate(queso);
-        queso.transform.position = new Vector3(0, 0.5f, 0);
+        cheeseInstance = Instantiate(cheese);
+        cheese.transform.position = new Vector3(0, 0.5f, 0);
     }
 
     Vector3 getRandomPos()
