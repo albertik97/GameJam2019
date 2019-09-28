@@ -192,7 +192,7 @@ public class GameController : MonoBehaviour
     void createCheese()
     {
         cheeseInstance = Instantiate(cheese);
-        cheese.transform.position = new Vector3(0, 0.5f, 0);
+        cheese.transform.position = new Vector3(0, -0.8f, 0);
     }
 
     Vector3 getRandomPos()
