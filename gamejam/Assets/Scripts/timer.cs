@@ -11,7 +11,7 @@ public class timer : MonoBehaviour
     // Start is called before the first frame update
     void Start(/*float mins*/)
     {
-        seconds = 0.0f;
+        seconds = -1;
         minutes = 3f;
         counter = GetComponent<Text>() as Text;
         counter.text = "03:00";

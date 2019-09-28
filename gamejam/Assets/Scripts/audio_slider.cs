@@ -11,6 +11,7 @@ public class audio_slider : MonoBehaviour
     void Start()
     {
         audio = GetComponent<AudioSource>();
+        audio.volume = volume;
     }
 
     void Update()
