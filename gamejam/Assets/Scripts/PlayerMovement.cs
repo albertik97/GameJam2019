@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public int playerId = 1;
     public float speed = 6.0f;
-    public int step = 1;
+    public float step = 1;
     private Vector3 pos;
     private Transform tr;
 

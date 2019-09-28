@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerId: 1
-  speed: 6
-  step: 1
+  speed: 14
+  step: 3.8
 --- !u!1 &8244439907653889784
 GameObject:
   m_ObjectHideFlags: 0
