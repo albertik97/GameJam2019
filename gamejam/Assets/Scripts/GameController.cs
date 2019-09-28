@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using TMPro;
 
 public class GameController : MonoBehaviour
 {
@@ -53,7 +52,7 @@ public class GameController : MonoBehaviour
     public void addPlayer1Score()
     {
         pl1_score += 1;
-        GameObject scr = GameObject.FindWithTag("score_p1");
+        GameObject scr = GameObject.FindWithTag("pl1_score");
         TextMeshProUGUI asd = scr.GetComponent<TextMeshProUGUI>();
         asd.text = pl1_score.ToString();
         Debug.Log(pl1_score);
@@ -62,7 +61,7 @@ public class GameController : MonoBehaviour
     public void addPlayer2Score()
     {
         pl2_score += 1;
-        GameObject scr = GameObject.FindWithTag("score_p2");
+        GameObject scr = GameObject.FindWithTag("pl2_score");
         TextMeshProUGUI asd = scr.GetComponent<TextMeshProUGUI>();
         asd.text = pl2_score.ToString();
     }

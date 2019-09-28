@@ -7,6 +7,9 @@ TagManager:
   - Veneno
   - Controls1
   - Controls2
+  - queso
+  - pl1_score
+  - pl2_score
   layers:
   - Default
   - TransparentFX
