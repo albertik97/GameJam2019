@@ -20,7 +20,7 @@ public class trampas : MonoBehaviour
         //Check the provided Collider2D parameter other to see if it is tagged "PickUp", if it is...
         if (other.gameObject.CompareTag("Veneno"))
         {
-            GetComponent<PlayerMovement>().pos = new Vector3(19, 19, 0);
+            transform.position = new Vector3(19.0f, 19.0f, 0.0f);
 
         }
     }

@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float step = 1;
     public Vector3 pos;
     private Transform tr;
+    public Animation animator;
 
     
 
@@ -51,21 +52,27 @@ public class PlayerMovement : MonoBehaviour
         {
             if(pos.x < 19.0f)
                 pos += Vector3.right * step;
+
+            transform.eulerAngles = new Vector3(0, 0, 180);
             Debug.Log("pos: " + pos);
+           
         } else if (GameImputManager.GetKey(playerId == 1 ? GameImputManager.keyMapping[KeyCode.A] : GameImputManager.keyMapping[KeyCode.LeftArrow]) && tr.position == pos)
         {
             if(pos.x > -19.0f)
                 pos += Vector3.left * step;
+            transform.eulerAngles = new Vector3(0, 0, 0);
             Debug.Log("pos: " + pos);
         } else if (GameImputManager.GetKey(playerId == 1 ? GameImputManager.keyMapping[KeyCode.W] : GameImputManager.keyMapping[KeyCode.UpArrow]) && tr.position == pos)
         {
             if(pos.y < 19.0f)
                 pos += Vector3.up * step;
+            transform.eulerAngles = new Vector3(0, 0, -90);
             Debug.Log("pos: " + pos);
         } else if (GameImputManager.GetKey(playerId == 1 ? GameImputManager.keyMapping[KeyCode.S] : GameImputManager.keyMapping[KeyCode.DownArrow]) && tr.position == pos)
         {
             if (pos.y > -19.0f)
                 pos += Vector3.down * step;
+            transform.eulerAngles = new Vector3(0, 0, 90);
             Debug.Log("pos: " + pos);
         }
 
