@@ -6,7 +6,8 @@ public class veneno : MonoBehaviour
 {
     public GameObject venenos;
     public GameObject queso;
-    private float step = 3.8f;
+    public GameObject agujero;
+    public float step;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,17 @@ public class veneno : MonoBehaviour
         {
             int ran = Random.Range(-5, 6);
             int ran2 = Random.Range(-5, 6);
-            Instantiate(venenos, new Vector3(step * ran, step*ran2, 0), Quaternion.identity);
+            if (ran != 0 && ran2 != 0)
+                Instantiate(venenos, new Vector3(step * ran, step*ran2, 0), Quaternion.identity);
+        }
+
+        int Npotions2 = Random.Range(1, 3);
+        for (int i = 0; i < Npotions2; i++)
+        {
+            int ran = Random.Range(-5, 6);
+            int ran2 = Random.Range(-5, 6);
+            if(ran!=0 && ran2!=0)
+                Instantiate(agujero, new Vector3(step * ran, step * ran2, 0), Quaternion.identity);
         }
 
     }
@@ -24,5 +35,6 @@ public class veneno : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
     }
 }
