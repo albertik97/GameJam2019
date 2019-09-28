@@ -49,19 +49,23 @@ public class PlayerMovement : MonoBehaviour
 
         if (GameImputManager.GetKey(playerId == 1 ? GameImputManager.keyMapping[KeyCode.D] : GameImputManager.keyMapping[KeyCode.RightArrow]) && tr.position == pos)
         {
-            pos += Vector3.right * step;
+            if(pos.x < 19.0f)
+                pos += Vector3.right * step;
             Debug.Log("pos: " + pos);
         } else if (GameImputManager.GetKey(playerId == 1 ? GameImputManager.keyMapping[KeyCode.A] : GameImputManager.keyMapping[KeyCode.LeftArrow]) && tr.position == pos)
         {
-            pos += Vector3.left * step;
+            if(pos.x > -19.0f)
+                pos += Vector3.left * step;
             Debug.Log("pos: " + pos);
         } else if (GameImputManager.GetKey(playerId == 1 ? GameImputManager.keyMapping[KeyCode.W] : GameImputManager.keyMapping[KeyCode.UpArrow]) && tr.position == pos)
         {
-            pos += Vector3.up * step;
+            if(pos.y < 19.0f)
+                pos += Vector3.up * step;
             Debug.Log("pos: " + pos);
         } else if (GameImputManager.GetKey(playerId == 1 ? GameImputManager.keyMapping[KeyCode.S] : GameImputManager.keyMapping[KeyCode.DownArrow]) && tr.position == pos)
         {
-            pos += Vector3.down * step;
+            if (pos.y > -19.0f)
+                pos += Vector3.down * step;
             Debug.Log("pos: " + pos);
         }
 
