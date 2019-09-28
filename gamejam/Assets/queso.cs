@@ -7,7 +7,7 @@ public class queso : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.Translate(new Vector3(0, 0, 0));
+        transform.Translate(new Vector3(0, -2.2f, 0));
         
     }
 
