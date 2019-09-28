@@ -54,26 +54,25 @@ public class PlayerMovement : MonoBehaviour
                 pos += Vector3.right * step;
 
             transform.eulerAngles = new Vector3(0, 0, 180);
-            Debug.Log("pos: " + pos);
-           
+            //Debug.Log("pos: " + pos);
         } else if (GameImputManager.GetKey(playerId == 1 ? GameImputManager.keyMapping[KeyCode.A] : GameImputManager.keyMapping[KeyCode.LeftArrow]) && tr.position == pos)
         {
             if(pos.x > -19.0f)
                 pos += Vector3.left * step;
             transform.eulerAngles = new Vector3(0, 0, 0);
-            Debug.Log("pos: " + pos);
+            //Debug.Log("pos: " + pos);
         } else if (GameImputManager.GetKey(playerId == 1 ? GameImputManager.keyMapping[KeyCode.W] : GameImputManager.keyMapping[KeyCode.UpArrow]) && tr.position == pos)
         {
             if(pos.y < 17.0f)
                 pos += Vector3.up * step;
             transform.eulerAngles = new Vector3(0, 0, -90);
-            Debug.Log("pos: " + pos);
+            //Debug.Log("pos: " + pos);
         } else if (GameImputManager.GetKey(playerId == 1 ? GameImputManager.keyMapping[KeyCode.S] : GameImputManager.keyMapping[KeyCode.DownArrow]) && tr.position == pos)
         {
             if (pos.y > -21.0f)
                 pos += Vector3.down * step;
             transform.eulerAngles = new Vector3(0, 0, 90);
-            Debug.Log("pos: " + pos);
+            //Debug.Log("pos: " + pos);
         }
 
         //if(tr.position == pos && (  Input.GetAxis("P" + playerId.ToString() + "_Horizontal") != 0 || 
@@ -86,5 +85,22 @@ public class PlayerMovement : MonoBehaviour
         //}
 
         transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+
+        Debug.Log("entra col");
+        if (col.gameObject.tag == "queso")
+        {
+            if(playerId == 1)
+            {
+                Debug.Log("Player1 Wins");
+            }
+            else
+            {
+                Debug.Log("Player2 Wins");
+            }
+        }
     }
 }

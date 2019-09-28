@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 
 public class GameController : MonoBehaviour
@@ -11,6 +12,7 @@ public class GameController : MonoBehaviour
 
     public GameObject   player1,
                         player2,
+                        queso,
                         trap;
 
     public KeyCode[]    p1Controls,
@@ -21,7 +23,11 @@ public class GameController : MonoBehaviour
     public GameObject p1Instance,
                       p2Instance;
 
+    public int  pl1_score,
+                pl2_score,
+                round;
 
+    bool to_reset;
 
 
 
@@ -31,20 +37,25 @@ public class GameController : MonoBehaviour
     {
         traps = new GameObject[numObjects];
         setControls();
+        round = 0;
         initMap();
-
+        to_reset = false;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (to_reset)
+        {
+            initMap();
+            to_reset = false;
+        }
     }
 
     void setControls()
@@ -96,11 +107,60 @@ public class GameController : MonoBehaviour
         }
     }
 
+    void WinRound(int pl)
+    {
+        if(pl == 1)
+        {
+            Debug.Log("player 1 wins");
+        }
+        else
+        {
+            Debug.Log("player 2 wins");
+        }
+    }
+
     void initMap()
     {
         createPlayers();
         createObjects();
+        createCheese();
+    }
 
+    void DestroyObjects()
+    {
+        for (int i = 0; i < traps.Length; i++)
+        {
+            Destroy(traps[i]);
+        }
+
+        Destroy(p1Instance);
+        Destroy(p2Instance);
+        Destroy(queso);
+    }
+
+    public void NextRound()
+    {
+
+        Debug.Log("Reinicio juego " + round);
+
+        round++;
+
+        DestroyObjects();
+
+        if (round < 6) {
+            //Now re-create them
+            to_reset = true;
+        }
+        else
+        {
+            //Game Ends
+            ExitToMenu();
+        }
+    }
+
+    void ExitToMenu()
+    {
+        round = 0;
     }
 
     void createPlayers()
@@ -108,6 +168,8 @@ public class GameController : MonoBehaviour
         p1Instance = Instantiate(player1);
         p2Instance = Instantiate(player2);
 
+        pl1_score = 0;
+        pl2_score = 0;
         p1Instance.transform.position = getRandomPosPlayer();
 
         do
@@ -119,6 +181,12 @@ public class GameController : MonoBehaviour
     Vector3 getRandomPosPlayer()
     {
         return new Vector3(Random.value < 0.5f ? -19 : 19, Random.value < 0.5f ? -21 : 17, 0);
+    }
+
+    void createCheese()
+    {
+        Instantiate(queso);
+        queso.transform.position = new Vector3(0, 0.5f, 0);
     }
 
     Vector3 getRandomPos()

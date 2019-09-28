@@ -12,9 +12,13 @@ public class giro : MonoBehaviour
         gira = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+// Update is called once per frame
+void Update()
+{
+        //Debug.Log(transform.rotation.z);
+        
+    if (transform.rotation.z > 0.1f)
+        gira = true;
 
         if (transform.rotation.z > 0.1f)
             gira = true;
