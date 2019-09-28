@@ -1502,7 +1502,7 @@ GameObject:
   - component: {fileID: 1994950093}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1529,6 +1529,7 @@ MonoBehaviour:
   p2Instance: {fileID: 0}
   pl1_score: 0
   pl2_score: 0
+  round: 0
 --- !u!4 &1994950094
 Transform:
   m_ObjectHideFlags: 0

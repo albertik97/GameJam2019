@@ -20,6 +20,8 @@ public class player1_cheese : MonoBehaviour
         if (col.gameObject.tag == "queso")
         {
             Debug.Log("Player 1 Wins");
+            GameController c = GameObject.FindObjectOfType(typeof(GameController)) as GameController;
+            c.NextRound();
         }
     }
 }

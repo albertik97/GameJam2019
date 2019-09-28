@@ -18,14 +18,19 @@ public class GameController : MonoBehaviour
 
     public GameObject p1Instance,
                       p2Instance;
-    public int          pl1_score,
-                        pl2_score;
+
+    public int  pl1_score,
+                pl2_score,
+                round;
+
+    bool to_reset;
 
     void Awake()
     {
         traps = new GameObject[numObjects];
+        round = 0;
         initMap();
-
+        to_reset = false;
     }
 
     // Start is called before the first frame update
@@ -37,7 +42,11 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (to_reset)
+        {
+            initMap();
+            to_reset = false;
+        }
     }
 
     void WinRound(int pl)
@@ -57,6 +66,43 @@ public class GameController : MonoBehaviour
         createPlayers();
         createObjects();
         createCheese();
+    }
+
+    void DestroyObjects()
+    {
+        for (int i = 0; i < traps.Length; i++)
+        {
+            Destroy(traps[i]);
+        }
+
+        Destroy(p1Instance);
+        Destroy(p2Instance);
+        Destroy(queso);
+    }
+
+    public void NextRound()
+    {
+
+        Debug.Log("Reinicio juego " + round);
+
+        round++;
+
+        DestroyObjects();
+
+        if (round < 6) {
+            //Now re-create them
+            to_reset = true;
+        }
+        else
+        {
+            //Game Ends
+            ExitToMenu();
+        }
+    }
+
+    void ExitToMenu()
+    {
+        round = 0;
     }
 
     void createPlayers()
