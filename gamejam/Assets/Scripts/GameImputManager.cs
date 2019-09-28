@@ -69,6 +69,12 @@ public static class GameImputManager
         
     }
 
+    public static void swap(this GameObject objectRef)
+    {
+        // Acting on objectRef which is the reference to the calling object
+        randomiseKeys();
+    }
+
     public static void SetKeyMap(KeyCode key, KeyCode newMov)
     {
         keyMapping[key] = newMov;

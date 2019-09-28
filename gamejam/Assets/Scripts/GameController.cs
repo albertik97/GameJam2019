@@ -66,7 +66,7 @@ public class GameController : MonoBehaviour
         asd.text = pl2_score.ToString();
     }
 
-    void setControls()
+    public void setControls()
     {
         p1Controls = GameImputManager.keyMovsP1;
         p2Controls = GameImputManager.keyMovsP2;
@@ -158,11 +158,20 @@ public class GameController : MonoBehaviour
         if (round < 6) {
             //Now re-create them
             initMap();
+            timer c = GameObject.FindObjectOfType(typeof(timer)) as timer;
+            c.ResetTimer();
         }
         else
         {
-            //Game Ends
-            ExitToMenu();
+            if (pl1_score == pl2_score)
+            {
+                initMap();
+            }
+            else
+            {
+                //Game Ends
+                ExitToMenu();
+            }
         }
     }
 
