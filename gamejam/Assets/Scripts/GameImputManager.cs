@@ -6,11 +6,11 @@ using System.Linq;
 public static class GameImputManager
 {
     public static Dictionary<KeyCode, KeyCode> keyMapping;
-    static KeyCode[] keyMovsP1 = new KeyCode[4] { KeyCode.W, KeyCode.S, KeyCode.A, KeyCode.D };
+    public static KeyCode[] keyMovsP1 = new KeyCode[4] { KeyCode.W, KeyCode.S, KeyCode.A, KeyCode.D };
     public static KeyCode[] keysP1 = new KeyCode[4] { KeyCode.W, KeyCode.S, KeyCode.A, KeyCode.D };
 
-    static KeyCode[] keyMovsP2 = new KeyCode[4] { KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow };
-    static KeyCode[] keysP2 = new KeyCode[4] { KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow };
+    public static KeyCode[] keyMovsP2 = new KeyCode[4] { KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow };
+    public static KeyCode[] keysP2 = new KeyCode[4] { KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow };
 
     static GameImputManager()
     {

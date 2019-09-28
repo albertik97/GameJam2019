@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Veneno
+  - Controls1
+  - Controls2
   layers:
   - Default
   - TransparentFX
