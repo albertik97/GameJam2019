@@ -6,11 +6,12 @@ public class audio_slider : MonoBehaviour
 {
     private AudioSource audio;
 
-    private float volume = 1f;
+    private static float volume = 1f;
 
     void Start()
     {
         audio = GetComponent<AudioSource>();
+        audio.volume = volume;
     }
 
     void Update()
