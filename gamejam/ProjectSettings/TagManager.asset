@@ -10,6 +10,12 @@ TagManager:
   - queso
   - pl1_score
   - pl2_score
+  - winner2
+  - winner1
+  - win_controller
+  - switch1
+  - switch2
+  - gamecanvas
   - trampa
   layers:
   - Default
