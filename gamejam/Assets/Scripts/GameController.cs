@@ -142,6 +142,11 @@ public class GameController : MonoBehaviour
             Destroy(traps[i]);
         }
 
+        for (int i = 0; i < paralizs.Length; i++)
+        {
+            Destroy(paralizs[i]);
+        }
+
         Destroy(p1Instance);
         Destroy(p2Instance);
         Destroy(cheeseInstance);
