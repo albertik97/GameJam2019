@@ -36,7 +36,8 @@ void Update()
     {
         if (other.gameObject.CompareTag("Player"))
         {
-           // gameObject.SetActive(false);
+            if(gameObject.tag == "trampa")
+                gameObject.SetActive(false);
         }
     }
 }

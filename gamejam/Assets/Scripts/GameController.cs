@@ -8,17 +8,20 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
 
-    public int numObjects = 5;
+    public int numObjects = 5,
+               numParalizs = 3;
 
     public GameObject   player1,
                         player2,
                         trap,
+                        paralizante,
                         cheese;
 
     public KeyCode[]    p1Controls,
                         p2Controls;
 
     public GameObject[] traps;
+    public GameObject[] paralizs;
 
     public GameObject p1Instance,
                       p2Instance,
@@ -33,6 +36,7 @@ public class GameController : MonoBehaviour
     void Awake()
     {
         traps = new GameObject[numObjects];
+        paralizs = new GameObject[numParalizs];
         setControls();
         round = 0;
         pl1_score = 0;
@@ -138,6 +142,11 @@ public class GameController : MonoBehaviour
             Destroy(traps[i]);
         }
 
+        for (int i = 0; i < paralizs.Length; i++)
+        {
+            Destroy(paralizs[i]);
+        }
+
         Destroy(p1Instance);
         Destroy(p2Instance);
         Destroy(cheeseInstance);
@@ -222,13 +231,13 @@ public class GameController : MonoBehaviour
     void createCheese()
     {
         cheeseInstance = Instantiate(cheese);
-        cheese.transform.position = new Vector3(0, -0.8f, 0);
+        cheese.transform.position = new Vector3(0, -0.4f, 0);
     }
 
     Vector3 getRandomPos()
     {
-        float step = 3.8f,
-            randomPosX = Random.Range(-19, 19),
+        float step = 3.6f,
+            randomPosX = Random.Range(-18, 18),
             randomPosY = Random.Range(-17.2f, 13.2f);
 
         float numStepsX = Mathf.Floor(randomPosX / step),
@@ -248,6 +257,15 @@ public class GameController : MonoBehaviour
                 traps[i].transform.position = getRandomPos();
             } while (traps[i].transform.position == new Vector3(0, -2, 0));
            
+        }
+
+        for(int i = 0; i < paralizs.Length; i++)
+        {
+            paralizs[i] = Instantiate(paralizante);
+            do
+            {
+                paralizs[i].transform.position = getRandomPos();
+            } while (paralizs[i].transform.position == new Vector3(0, -2, 0));
         }
     }
 }

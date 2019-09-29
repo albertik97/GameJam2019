@@ -4,13 +4,18 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Veneno
-  - Controls1
-  - Controls2
   - queso
+  - trampa
+  - swtch
+  - Controls2
+  - switch1
   - pl1_score
+  - gamecanvas
+  - Controls1
   - pl2_score
-  - PlayerSprite1
+  - switch2
+  - Veneno
+  - win_controller
   layers:
   - Default
   - TransparentFX
@@ -46,14 +51,11 @@ TagManager:
   - 
   m_SortingLayers:
   - name: Background
-    uniqueID: 4266598589
+    uniqueID: 3167767441
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: trampas
-    uniqueID: 2786079179
-    locked: 0
   - name: Player
-    uniqueID: 1301393585
+    uniqueID: 2433032761
     locked: 0
