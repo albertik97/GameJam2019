@@ -10,6 +10,7 @@ TagManager:
   - queso
   - pl1_score
   - pl2_score
+  - PlayerSprite1
   layers:
   - Default
   - TransparentFX
@@ -49,6 +50,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: trampas
+    uniqueID: 2786079179
     locked: 0
   - name: Player
     uniqueID: 1301393585

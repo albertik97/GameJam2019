@@ -22,11 +22,13 @@ public class trampas : MonoBehaviour
         {
             
             if (GetComponentInParent<PlayerMovement>().playerId == 1) {
+                GetComponentInParent<PlayerMovement>().gameObject.transform.position = FindObjectOfType<GameController>().pos1;
                 GetComponentInParent<PlayerMovement>().pos = FindObjectOfType<GameController>().pos1;
             }
 
             if (GetComponentInParent<PlayerMovement>().playerId == 2)
             {
+                GetComponentInParent<PlayerMovement>().gameObject.transform.position = FindObjectOfType<GameController>().pos2;
                 GetComponentInParent<PlayerMovement>().pos = FindObjectOfType<GameController>().pos2;
             }
 
