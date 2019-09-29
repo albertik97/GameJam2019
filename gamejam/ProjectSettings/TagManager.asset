@@ -17,6 +17,7 @@ TagManager:
   - switch2
   - gamecanvas
   - trampa
+  - swtch
   layers:
   - Default
   - TransparentFX

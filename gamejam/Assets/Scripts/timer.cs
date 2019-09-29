@@ -80,6 +80,10 @@ public class timer : MonoBehaviour
                 active = true;
                 swtch = 0f;
 
+                GameObject m = GameObject.FindGameObjectWithTag("swtch");
+                AudioSource au = m.GetComponent<AudioSource>();
+                au.Play();
+
                 GameObject a = GameObject.FindGameObjectWithTag("gamecanvas");
                 GameObject ch0 = a.transform.GetChild(7).gameObject;
                 ch0.SetActive(true);
