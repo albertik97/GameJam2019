@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -27,8 +28,8 @@ public class GameController : MonoBehaviour
                 pl2_score,
                 round;
 
+    public static int pl_winner;
     public Vector3 pos1, pos2;
-
     void Awake()
     {
         traps = new GameObject[numObjects];
@@ -36,6 +37,7 @@ public class GameController : MonoBehaviour
         round = 0;
         pl1_score = 0;
         pl2_score = 0;
+        pl_winner = 0;
         initMap();
     }
 
@@ -117,16 +119,9 @@ public class GameController : MonoBehaviour
         }
     }
 
-    void WinRound(int pl)
+    public void RestartGame()
     {
-        if(pl == 1)
-        {
-            Debug.Log("player 1 wins");
-        }
-        else
-        {
-            Debug.Log("player 2 wins");
-        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     void initMap()
@@ -172,14 +167,36 @@ public class GameController : MonoBehaviour
             else
             {
                 //Game Ends
-                ExitToMenu();
+                GoToWinScreen();
             }
         }
     }
 
-    void ExitToMenu()
+    public void GoToWinScreen()
     {
-        round = 0;
+        if(pl1_score > pl2_score)
+        {
+            pl_winner = 1;
+        }
+        else
+        {
+            pl_winner = 2;
+        }
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public int GetWinner()
+    {
+        return pl_winner;
+    }
+
+    public void ExitToMenu()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+        }
     }
 
     void createPlayers()
