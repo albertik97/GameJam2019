@@ -27,6 +27,8 @@ public class GameController : MonoBehaviour
                 pl2_score,
                 round;
 
+    public Vector3 pos1, pos2;
+
     void Awake()
     {
         traps = new GameObject[numObjects];
@@ -185,11 +187,13 @@ public class GameController : MonoBehaviour
         p1Instance = Instantiate(player1);
         p2Instance = Instantiate(player2);
 
-        p1Instance.transform.position = getRandomPosPlayer();
+        pos1 = getRandomPosPlayer();
+        p1Instance.transform.position = pos1;
 
         do
         {
-            p2Instance.transform.position = getRandomPosPlayer();
+            pos2 = getRandomPosPlayer();
+            p2Instance.transform.position = pos2;
         } while(p1Instance.transform.position == p2Instance.transform.position);
     }
 

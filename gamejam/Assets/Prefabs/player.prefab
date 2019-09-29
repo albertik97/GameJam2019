@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 216212651206442638}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,9 +63,10 @@ GameObject:
   - component: {fileID: 3766334821093488538}
   - component: {fileID: 4887543281594791069}
   - component: {fileID: 114582087597781773}
+  - component: {fileID: 5732169674354992219}
   m_Layer: 0
   m_Name: sprite
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +149,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -3.88, y: 0}
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 7.65
 --- !u!50 &3766334821093488538
 Rigidbody2D:
   serializedVersion: 4
@@ -199,5 +200,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b21e0a782d2210649a1bb2197e68c0c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5732169674354992219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8244439907653889784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89552d1cd492d554591e1fc64015d2d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
