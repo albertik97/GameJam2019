@@ -47,7 +47,7 @@ public class timer : MonoBehaviour
             c.NextRound();
         }
 
-        if(changer >= 10)
+        if(changer >= 5)
         {
             changer = 0;
             goc.swap();
