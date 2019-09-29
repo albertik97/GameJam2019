@@ -179,6 +179,8 @@ MonoBehaviour:
   pl1_score: 0
   pl2_score: 0
   round: 0
+  pos1: {x: 0, y: 0, z: 0}
+  pos2: {x: 0, y: 0, z: 0}
 --- !u!1 &223428194
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,7 +215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -158, y: -1.5}
+  m_AnchoredPosition: {x: 268, y: -153}
   m_SizeDelta: {x: 330.6, y: 194.70001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &223428196
@@ -237,7 +239,7 @@ MonoBehaviour:
   m_text: PLAYER 1 WINS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -345,7 +347,7 @@ GameObject:
   - component: {fileID: 271170926}
   m_Layer: 5
   m_Name: Player2
-  m_TagString: Untagged
+  m_TagString: winner2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -368,8 +370,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -49.38037, y: -8.12262}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -48.7, y: -8.8}
+  m_SizeDelta: {x: 948.6, y: 421.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &388952204
 GameObject:
@@ -502,7 +504,7 @@ MonoBehaviour:
   m_text: EXIT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -699,7 +701,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -158, y: -1.5}
+  m_AnchoredPosition: {x: 266, y: -153}
   m_SizeDelta: {x: 330.6, y: 194.70001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &870941669
@@ -723,7 +725,7 @@ MonoBehaviour:
   m_text: PLAYER 2 WINS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -983,7 +985,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 161.59998, y: -0.10001}
+  m_AnchoredPosition: {x: -254, y: 0.0000074506}
   m_SizeDelta: {x: 423.2, y: 423.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1355761654
@@ -1157,8 +1159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 161.59998, y: -0.10001}
-  m_SizeDelta: {x: 423.2, y: 423.2}
+  m_AnchoredPosition: {x: -251, y: 0.0000061989}
+  m_SizeDelta: {x: 420.25, y: 419.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1375124299
 MonoBehaviour:
@@ -1420,7 +1422,7 @@ GameObject:
   - component: {fileID: 1876084257}
   m_Layer: 0
   m_Name: Win_Controller
-  m_TagString: Untagged
+  m_TagString: win_controller
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1453,6 +1455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47101cf46690b8f45a4810ebb9bcc7fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plwinner: {fileID: 0}
 --- !u!1 &1936631365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,7 +1467,7 @@ GameObject:
   - component: {fileID: 1936631366}
   m_Layer: 5
   m_Name: Player1
-  m_TagString: Untagged
+  m_TagString: winner1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1487,8 +1490,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -49.38037, y: -8.12262}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -50.7, y: -8.2}
+  m_SizeDelta: {x: 947.3, y: 419.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2030071405
 GameObject:
@@ -1548,7 +1551,7 @@ MonoBehaviour:
   m_text: PLAY AGAIN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

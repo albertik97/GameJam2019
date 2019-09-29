@@ -32,13 +32,16 @@ public class GameController : MonoBehaviour
     public Vector3 pos1, pos2;
     void Awake()
     {
-        traps = new GameObject[numObjects];
-        setControls();
-        round = 0;
-        pl1_score = 0;
-        pl2_score = 0;
-        pl_winner = 0;
-        initMap();
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            traps = new GameObject[numObjects];
+            setControls();
+            round = 0;
+            pl1_score = 0;
+            pl2_score = 0;
+            pl_winner = 0;
+            initMap();
+        }
     }
 
     // Start is called before the first frame update
