@@ -237,7 +237,7 @@ public class GameController : MonoBehaviour
     Vector3 getRandomPos()
     {
         float step = 3.6f,
-            randomPosX = Random.Range(-19, 19),
+            randomPosX = Random.Range(-18, 18),
             randomPosY = Random.Range(-17.2f, 13.2f);
 
         float numStepsX = Mathf.Floor(randomPosX / step),
