@@ -2523,13 +2523,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numObjects: 5
+  numParalizs: 3
   player1: {fileID: 855266706333957328, guid: 3776892e4dd6cc04197865f36a06eaa4, type: 3}
   player2: {fileID: 5775986979852886624, guid: 438d52a839252ac46844fdebacdfceaf, type: 3}
   trap: {fileID: 2445255866764296701, guid: 15898c2707ec33441a13727c4b201c94, type: 3}
+  paralizante: {fileID: 7614267693789377856, guid: ae6e4418b2cf5f544b63f2d99c10681a,
+    type: 3}
   cheese: {fileID: 7461616740800940362, guid: 19378af4a652b7c4393a951dfabc61a4, type: 3}
   p1Controls: 
   p2Controls: 
   traps: []
+  paralizs: []
   p1Instance: {fileID: 0}
   p2Instance: {fileID: 0}
   cheeseInstance: {fileID: 0}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class paralizador : MonoBehaviour
 {
 
-    public float freezeTime = 20.0f;
+    public float freezeTime = 2.0f;
     
     void Start()
     {
@@ -31,7 +31,7 @@ public class paralizador : MonoBehaviour
         {
             //Debug.Log("Congelado");
             gameObject.GetComponentInParent<PlayerMovement>().freezed = true;
-            collision.gameObject.SetActive(false);
+            
         }
     }
 }

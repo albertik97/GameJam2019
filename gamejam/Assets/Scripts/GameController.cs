@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour
     void Awake()
     {
         traps = new GameObject[numObjects];
+        paralizs = new GameObject[numParalizs];
         setControls();
         round = 0;
         pl1_score = 0;
@@ -251,6 +252,15 @@ public class GameController : MonoBehaviour
                 traps[i].transform.position = getRandomPos();
             } while (traps[i].transform.position == new Vector3(0, -2, 0));
            
+        }
+
+        for(int i = 0; i < paralizs.Length; i++)
+        {
+            paralizs[i] = Instantiate(paralizante);
+            do
+            {
+                paralizs[i].transform.position = getRandomPos();
+            } while (paralizs[i].transform.position == new Vector3(0, -2, 0));
         }
     }
 }
