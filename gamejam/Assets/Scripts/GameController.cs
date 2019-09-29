@@ -231,12 +231,12 @@ public class GameController : MonoBehaviour
     void createCheese()
     {
         cheeseInstance = Instantiate(cheese);
-        cheese.transform.position = new Vector3(0, -0.8f, 0);
+        cheese.transform.position = new Vector3(0, -0.4f, 0);
     }
 
     Vector3 getRandomPos()
     {
-        float step = 3.8f,
+        float step = 3.6f,
             randomPosX = Random.Range(-19, 19),
             randomPosY = Random.Range(-17.2f, 13.2f);
 
