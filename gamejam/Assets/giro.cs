@@ -36,7 +36,7 @@ void Update()
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            gameObject.SetActive(false);
+           // gameObject.SetActive(false);
         }
     }
 }
