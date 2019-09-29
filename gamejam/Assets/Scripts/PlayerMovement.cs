@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 pos;
     private Transform tr;
     public Animation animator;
+    public bool freezed = false;
 
     
 
@@ -48,26 +49,26 @@ public class PlayerMovement : MonoBehaviour
 
         //}
 
-        if (GameImputManager.GetKey(playerId == 1 ? GameImputManager.keyMapping[KeyCode.D] : GameImputManager.keyMapping[KeyCode.RightArrow]) && tr.position == pos)
+        if (GameImputManager.GetKey(playerId == 1 ? GameImputManager.keyMapping[KeyCode.D] : GameImputManager.keyMapping[KeyCode.RightArrow]) && tr.position == pos && !freezed)
         {
             if(pos.x < 18.0f)
                 pos += Vector3.right * step;
 
             transform.eulerAngles = new Vector3(0, 0, 180);
             //Debug.Log("pos: " + pos);
-        } else if (GameImputManager.GetKey(playerId == 1 ? GameImputManager.keyMapping[KeyCode.A] : GameImputManager.keyMapping[KeyCode.LeftArrow]) && tr.position == pos)
+        } else if (GameImputManager.GetKey(playerId == 1 ? GameImputManager.keyMapping[KeyCode.A] : GameImputManager.keyMapping[KeyCode.LeftArrow]) && tr.position == pos && !freezed)
         {
             if(pos.x > -19.0f)
                 pos += Vector3.left * step;
             transform.eulerAngles = new Vector3(0, 0, 0);
             //Debug.Log("pos: " + pos);
-        } else if (GameImputManager.GetKey(playerId == 1 ? GameImputManager.keyMapping[KeyCode.W] : GameImputManager.keyMapping[KeyCode.UpArrow]) && tr.position == pos)
+        } else if (GameImputManager.GetKey(playerId == 1 ? GameImputManager.keyMapping[KeyCode.W] : GameImputManager.keyMapping[KeyCode.UpArrow]) && tr.position == pos && !freezed)
         {
             if(pos.y < 17.0f)
                 pos += Vector3.up * step;
             transform.eulerAngles = new Vector3(0, 0, -90);
             //Debug.Log("pos: " + pos);
-        } else if (GameImputManager.GetKey(playerId == 1 ? GameImputManager.keyMapping[KeyCode.S] : GameImputManager.keyMapping[KeyCode.DownArrow]) && tr.position == pos)
+        } else if (GameImputManager.GetKey(playerId == 1 ? GameImputManager.keyMapping[KeyCode.S] : GameImputManager.keyMapping[KeyCode.DownArrow]) && tr.position == pos && !freezed)
         {
             if (pos.y > -21.0f)
                 pos += Vector3.down * step;

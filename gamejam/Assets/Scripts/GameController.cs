@@ -8,17 +8,20 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
 
-    public int numObjects = 5;
+    public int numObjects = 5,
+               numParalizs = 3;
 
     public GameObject   player1,
                         player2,
                         trap,
+                        paralizante,
                         cheese;
 
     public KeyCode[]    p1Controls,
                         p2Controls;
 
     public GameObject[] traps;
+    public GameObject[] paralizs;
 
     public GameObject p1Instance,
                       p2Instance,
